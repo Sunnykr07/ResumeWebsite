@@ -1,83 +1,132 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Personal Site Of Sunny Kumar</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', /* 'class' or 'media', we use 'class' to enable dark mode manually */
+        }
+    </script>
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
-<body>
-    <table cellspacing="10">
-        <tr>
-            <td><img src="image_used/1848533739.jpg" height="250" alt="Profile Photo Of Sunny Kumar"></td>
-            <td><h1>Sunny Kumar</h1>
-                <p><em>Tech Enthusiat.</em></p>
-                <p>I am Computer Science Graduate from Chitkara University,Himachal Pradesh. I have passed my Matric And Intermediate From CBSE Board. </p></td>
-        </tr> 
-    </table>
-    <hr> 
-    <h3>Educational Qualification </h3>
-        <table border="1"> <!-- To add table border we only have to set here the "border=1" and border lag jayega -->
-            <thead>
-                <tr>
-                    <th>Degree</th>
-                    <th>Board/University</th>
-                </tr>
+<body class="dark:bg-zinc-900 dark:text-white">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="md:flex md:items-center md:space-x-12 py-8">
+      <img src="image_used/1848533739.jpg" style="width: 250; height: 250;" alt="Profile Photo Of Sunny Kumar" class="rounded-full" />
+      <div>
+        <h1 class="text-4xl font-bold text-zinc-900 dark:text-white">Sunny Kumar</h1>
+        <p class="text-xl text-zinc-600 dark:text-zinc-300"><em>Tech Enthusiast.</em></p>
+        <p class="mt-4 text-zinc-600 dark:text-zinc-300">
+          I am a Computer Science Graduate from Chitkara University, Himachal Pradesh. I have passed
+          my Matric and Intermediate from CBSE Board.
+        </p>
+      </div>
+    </div>
+    <hr class="my-8 border-zinc-300 dark:border-zinc-700" />
+    <div>
+      <h3 class="text-2xl font-semibold text-zinc-900 dark:text-white">Educational Qualification</h3>
+      <div class="mt-4">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left text-zinc-500 dark:text-zinc-400">
+            <thead
+              class="text-xs text-zinc-700 uppercase bg-zinc-50 dark:bg-zinc-700 dark:text-zinc-400"
+            >
+              <tr>
+                <th scope="col" class="py-3 px-6">Degree</th>
+                <th scope="col" class="py-3 px-6">Board/University</th>
+              </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Class 10th</td>
-                    <td><a href="https://www.cbse.gov.in/cbsenew/cbse.html">CBSE</a></td>
-                </tr>
-                <tr>
-                    <td>Class 12th</td>
-                    <td><a href="https://www.cbse.gov.in/cbsenew/cbse.html">CBSE</a></td>   
-                </tr>
-                <tr>
-                    <td>Graduation</td>
-                    <td><a href="https://www.chitkarauniversity.edu.in/">CHITKARA UNIVERSITY</a></td>
-                </tr>
+              <tr class="bg-white border-b dark:bg-zinc-800 dark:border-zinc-700">
+                <td class="py-4 px-6">Class 10th</td>
+                <td class="py-4 px-6">
+                  <a
+                    href="https://www.cbse.gov.in/cbsenew/cbse.html"
+                    class="text-blue-600 hover:underline dark:text-blue-400"
+                    >CBSE</a
+                  >
+                </td>
+              </tr>
+              <tr class="bg-zinc-50 border-b dark:bg-zinc-900 dark:border-zinc-700">
+                <td class="py-4 px-6">Class 12th</td>
+                <td class="py-4 px-6">
+                  <a
+                    href="https://www.cbse.gov.in/cbsenew/cbse.html"
+                    class="text-blue-600 hover:underline dark:text-blue-400"
+                    >CBSE</a
+                  >
+                </td>
+              </tr>
+              <tr class="bg-white dark:bg-zinc-800">
+                <td class="py-4 px-6">Graduation</td>
+                <td class="py-4 px-6">
+                  <a
+                    href="https://www.chitkarauniversity.edu.in/"
+                    class="text-blue-600 hover:underline dark:text-blue-400"
+                    >CHITKARA UNIVERSITY</a
+                  >
+                </td>
+              </tr>
             </tbody>
-         </table>
-         <br>
-         <hr>
-         <h3>Skills</h3>
-         <table cellspacing="10">
-            <tr>
-                <td>Java</td>
-                <td>⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-                <td>DSA</td>
-                <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-                <td>HTML</td>
-                <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-                <td>CSS</td>
-                <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-                <td>JavaScript</td>
-                <td>⭐⭐</td>
-            </tr>
-            <tr>
-                <td>Solidity</td>
-                <td>⭐⭐⭐</td>
-            </tr>
-            
-         </table>
-         <br>
-         <hr>
-         <h3>My Hobbies</h3>
-         <ol>
-            <li>Book Reading</li>
-            <li>Playing Cricket</li>
-            <li>Playing Ludo</li>
-        </ol>
-        <hr>
-        <br>
-        <h3><a href="Contact_Me.html">Contact Me</a></h3>
- 
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr class="my-8 border-zinc-300 dark:border-zinc-700" />
+    <div>
+      <h3 class="text-2xl font-semibold text-zinc-900 dark:text-white">Skills</h3>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex justify-between items-center">
+          <span>Java</span>
+          <span>⭐⭐⭐⭐</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>DSA</span>
+          <span>⭐⭐⭐</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>HTML</span>
+          <span>⭐⭐⭐</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>CSS</span>
+          <span>⭐⭐⭐</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>JavaScript</span>
+          <span>⭐⭐</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>Solidity</span>
+          <span>⭐⭐⭐</span>
+        </div>
+      </div>
+    </div>
+    <hr class="my-8 border-zinc-300 dark:border-zinc-700" />
+    <div>
+      <h3 class="text-2xl font-semibold text-zinc-900 dark:text-white">My Hobbies</h3>
+      <ol class="list-decimal pl-5 mt-4 text-zinc-600 dark:text-zinc-300">
+        <li>Book Reading</li>
+        <li>Playing Cricket</li>
+        <li>Playing Ludo</li>
+      </ol>
+    </div>
+    <hr class="my-8 border-zinc-300 dark:border-zinc-700" />
+    <div class="text-center">
+      <h3 class="text-2xl font-semibold text-zinc-900 dark:text-white">
+        <a href="Contact_Me.html" class="text-blue-600 hover:underline dark:text-blue-400"
+          >Contact Me</a
+        >
+      </h3>
+    </div>
+  </div>
 </body>
 </html>
